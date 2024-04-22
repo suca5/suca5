@@ -39,7 +39,7 @@ void read_data_formatRECO2(std::vector<std::string> listfiles, std::vector<std::
                 float y = std::stof(linedata[6]);
                 float r = std::stof(linedata[7]);
                 int rhit = std::stoi(linedata[9]);
-                std::vector<int> rlist(linedata.begin() + 10, linedata.begin() + 10 + rhit);
+                std::vector<int> rlist(linedata.begin() + 10, linedata.begin() + 10 + rhit); //SBAGLIATO INSERIRE FOR PER INSERIRE ELEMNTI SU RHIT
 
                 // Debug print
                 // std::cout << "RING: hyp " << hypo << " X " << x << " Y " << y << " R " << r << " Nhit " << rhit << std::endl;
@@ -54,7 +54,7 @@ void read_data_formatRECO2(std::vector<std::string> listfiles, std::vector<std::
                 int ka = std::stoi(linedata[8]);
                 int ehit = std::stoi(linedata[9]);
                 if (ehit > MAXHIT) ehit = MAXHIT;
-                std::vector<int> elist(linedata.begin() + 10, linedata.begin() + 10 + ehit);
+                std::vector<int> elist(linedata.begin() + 10, linedata.begin() + 10 + ehit); //SBAGLIATO INSERIRE FOR PER INSERIRE ELEMNTI SU RHIT
 
                 // Prepare feature list
                 for (int i = 0; i < ehit; ++i) {
