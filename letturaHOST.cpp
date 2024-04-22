@@ -58,7 +58,7 @@ void read_data_formatRECO2(std::vector<std::string> listfiles, std::vector<std::
                 std::string id_ev = (linedata[0])
                 int nt = std::stoi(linedata[4]);
                 int hit = std::stoi(linedata[9]);
-                if (ehit > MAXHIT) hit = MAXHIT;
+                if (hit > MAXHIT) hit = MAXHIT;
                 //std::vector<int> elist(ehit,0);
 
                 auto list = buffer_input.map<int*>();
@@ -68,15 +68,15 @@ void read_data_formatRECO2(std::vector<std::string> listfiles, std::vector<std::
                     list[f-10]= std::stoi(linedata[f]);                    
                 } 
 
-                rings_array[0] = nt;
-                rings_array[1] = x;
-                rings_array[2] = y;
-                rings_array[3] = r;
+            rings_array[0] = nt;
+            rings_array[1] = x;
+            rings_array[2] = y;
+            rings_array[3] = r;
             
 //INSERIRE COUT CON GLI ELEMENTI DI HIT PER VEDERE SE LEGGE BENE
 //NON CHIARO COME FARE CON BUFFER INOUT E BUFFER OUTPUT (FORSE COME HO FATTO E' OK)
 
-            / Copy input data to device global memory
+            // Copy input data to device global memory
             std::cout << "Copying data..." << std::endl;
             buffer_input.sync(XCL_BO_SYNC_BO_TO_DEVICE);
 
@@ -93,6 +93,10 @@ void read_data_formatRECO2(std::vector<std::string> listfiles, std::vector<std::
     // Copy Result from Device Global Memory to Host Local Memory
             std::cout << "Getting Results..." << std::endl;
             buffer_output.sync(XCL_BO_SYNC_BO_FROM_DEVICE);
+
+            for(int h = 0; h < hit; ++h){
+                std::cout << "RAW-> " << list[h] << " | " << ker_list[h] << "<-INCR" << std::endl;                
+                }            
             }
         }
     }
