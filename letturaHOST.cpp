@@ -68,10 +68,10 @@ void read_data_formatRECO2(std::vector<std::string> listfiles, std::vector<std::
                     list[f-10]= std::stoi(linedata[f]);                    
                 } 
 
-            rings_array[0] = nt;
-            rings_array[1] = x;
-            rings_array[2] = y;
-            rings_array[3] = r;
+            rings_array[0] = x;
+            rings_array[1] = y;
+            rings_array[2] = r;
+            rings_array[3] = nt;
             
 //INSERIRE COUT CON GLI ELEMENTI DI HIT PER VEDERE SE LEGGE BENE
 //NON CHIARO COME FARE CON BUFFER INOUT E BUFFER OUTPUT (FORSE COME HO FATTO E' OK)
