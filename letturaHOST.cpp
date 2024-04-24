@@ -141,7 +141,7 @@ int main() {
 
 
     
-    std::vector<std::string> listfiles = {"file1.txt", "file2.txt"}; // Example file list
+    std::vector<std::string> listfiles = {"/apotto/home1/aliens/bianchinir/lavoro/dataset_tools/2472509"}; // Example file list
     std::vector<std::vector<int>> hitList;
     std::vector<int> labelList;
 
