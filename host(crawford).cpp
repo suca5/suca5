@@ -72,7 +72,7 @@ int main(int argc, char** argv) {
 
     //CARICAMENTO COORDINATE
 
-    std::vector<std::vector<int>> coordinate;
+    std::vector<std::vector<float>> coordinate;
     int j=0;
     std::ifstream loadcoord(coord);
     if (!loadcoord.is_open()) {
@@ -91,7 +91,7 @@ int main(int argc, char** argv) {
             }
 
         
-        coordinate[j][0]=std::stoi(linedata1[0]);
+        coordinate[j][0]=std::stof(linedata1[0]);
         coordinate[j][1]=std::stof(linedata1[1]);
         coordinate[j][2]=std::stof(linedata1[2]);
         
