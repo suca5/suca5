@@ -4,12 +4,12 @@
 #include <vector>
 
 extern "C" {
-void increment(hls::stream<ap_axiu<32, 0, 0, 0> >& input, hls::stream<ap_axiu<32, 0, 0, 0> >& output, int hit ) {
+void increment(int x, int y, int* output, int hit ) {
 
     
 #pragma HLS interface ap_ctrl_none port = return
 
-    ap_axiu<32, 0, 0, 0> list = input.read();
+    /*ap_axiu<32, 0, 0, 0> list = input.read();
     st::vector<int> x(hit,0), y(hit,0);
     //    QUALCHE MODO PER ANDARE DA list a x[i] e y[i] (coordinate x e y di ogni PMT indicizzate con i che arriva fino a hit)
 
@@ -25,7 +25,7 @@ void increment(hls::stream<ap_axiu<32, 0, 0, 0> >& input, hls::stream<ap_axiu<32
     for(int i = 0; i < hit; ++i){
         x[i] = x[i] - x_m;
         y[i] = y[i] - y_m;
-    }
+    }*/
     
     std::vector<int> xy(hit,0), x2(hit,0), y2(hit,0), x3(hit,0), y3(hit,0), x2y(hit,0), xy2(hit,0);
     int XY = 0, X2 = 0, Y2 = 0, X3 = 0, Y3 = 0, X2Y = 0, XY2 = 0;
@@ -57,9 +57,9 @@ void increment(hls::stream<ap_axiu<32, 0, 0, 0> >& input, hls::stream<ap_axiu<32
 
     std::vector<int> ring(3,0)
 
-    ring[0] = x0;
-    ring[1] = y0;
-    ring[2] = r;
+    output[0] = x0;
+    output[1] = y0;
+    output[2] = r;
 
     output.write(ring);
 }
