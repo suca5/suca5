@@ -189,9 +189,9 @@ int main(int argc, char** argv) {
                 std::cout << "Getting Results..." << std::endl;
                 buffer_output.sync(XCL_BO_SYNC_BO_FROM_DEVICE);
                 
-                std::cout << "RAGGIO: DA FILE -> " << rings_array[0] << " vs " << rings_arrayK[0] << " <- DA ALGO " << std::endl;
+                std::cout << "RAGGIO: DA FILE -> " << rings_array[2] << " vs " << rings_arrayK[2] << " <- DA ALGO " << std::endl;
                 std::cout << "X: DA FILE -> " << rings_array[0] << " vs " << rings_arrayK[0] << " <- DA ALGO " << std::endl;
-                std::cout << "Y: DA FILE -> " << rings_array[0] << " vs " << rings_arrayK[0] << " <- DA ALGO " << std::endl;
+                std::cout << "Y: DA FILE -> " << rings_array[1] << " vs " << rings_arrayK[1] << " <- DA ALGO " << std::endl;
                 
     
 
