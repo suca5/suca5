@@ -4,7 +4,7 @@
 #include <vector>
 
 extern "C" {
-void increment(int x, int y, int* output, int hit ) {
+void increment(float x, float y, float* output, int hit ) {
 
     
 #pragma HLS interface ap_ctrl_none port = return
