@@ -64,9 +64,9 @@ int main(int argc, char** argv) {
     auto buffer_input2 = xrt::bo(device, vector_size_bytes, increment.group_id(0));
     auto buffer_output = xrt::bo(device, vector_size_bytes, increment.group_id(0));
 
-    auto x = buffer_input1.map<int*>();
-    auto y = buffer_input2.map<int*>();
-    auto rings_arrayK = buffer_output.map<int*>();
+    auto x = buffer_input1.map<float*>();
+    auto y = buffer_input2.map<float*>();
+    auto rings_arrayK = buffer_output.map<float*>();
 
 
 
@@ -112,7 +112,7 @@ int main(int argc, char** argv) {
 
 
     std::string line2;
-    std::vector<int> rings_array(4, 0);
+    std::vector<float> rings_array(4, 0);
 
     while (std::getline(loadfile, line2)) {
 
