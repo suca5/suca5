@@ -27,8 +27,8 @@ void increment(float x, float y, float* output, int hit ) {
         y[i] = y[i] - y_m;
     }*/
     
-    std::vector<int> xy(hit,0), x2(hit,0), y2(hit,0), x3(hit,0), y3(hit,0), x2y(hit,0), xy2(hit,0);
-    int XY = 0, X2 = 0, Y2 = 0, X3 = 0, Y3 = 0, X2Y = 0, XY2 = 0;
+    std::vector<float> xy(hit,0), x2(hit,0), y2(hit,0), x3(hit,0), y3(hit,0), x2y(hit,0), xy2(hit,0);
+    float XY = 0, X2 = 0, Y2 = 0, X3 = 0, Y3 = 0, X2Y = 0, XY2 = 0;
     
     for(int i = 0; i < hit; ++1){
         xy[i] = x[i] * y[i];
@@ -50,17 +50,17 @@ void increment(float x, float y, float* output, int hit ) {
         XY2 = XY2 + xy2[i];
     }
 
-    int x0, y0, r;
+    float x0, y0, r;
     //ULTIME COSE PER CALCOLARE CARATTERISTICHE CERCHIO
 
     //TUTTO QUESTO E' PER UN CERCHIO, AGGIUNGERE ANCHE ALTRE CASISTICHE CIOE' ZERO CERCHI DUE E TRE
 
-    std::vector<int> ring(3,0)
+    //std::vector<float> ring(3,0)
 
     output[0] = x0;
     output[1] = y0;
     output[2] = r;
 
-    output.write(ring);
+    //output.write(ring);
 }
 }
